@@ -1,0 +1,39 @@
+[
+    [
+        {
+            "speaker" : "Gustavo",
+            "dialog" : "Hola ma, queria hacer algo para ti y para todos en la familia.\nAlgo especial que espero que te haga pensar en Acapulco.",
+            "newSpeaker": "true"
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog" : "Y mas que nada, quiero mostrarles lo que recuerdo de alli\ncuando era nino, ya que ustedes siempre hablan de momentos\nque yo no recuerdo."
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "En realidad solo queria mostrarles lo que recuerdo, como las\ngalerias, los mercados donde ibamos a comprar y donde salimos a\nvender comida"
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "Y darte una imagen de lo que creo que es Mexico."
+        }
+    ],
+    [
+        {
+            "changeScene": "beachScene"
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "El primer lugar donde tengo muchos recuerdos es... la playa.",
+            "newSpeaker": "true"
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "ojrojroijr"
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "eoiejoiej"
+        }
+    ]
+]
