@@ -4,7 +4,7 @@ let config = {
     type: Phaser.AUTO,
     width: 800,
     height: 600,
-    scene: [Start, Neutral, Beach] // add four scenes
+    scene: [Start, Neutral, Beach, Picker, Market, MyMarket] // add four scenes
 }
 
 

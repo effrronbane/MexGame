@@ -24,8 +24,8 @@ class Beach extends Phaser.Scene {
         this.timer = 13
 
         //dialog var
-        this.dialogConvo = this.registry.get('dialogConvo')
-        this.dialogLine = this.registry.get('dialogLine') + 1		  
+        this.dialogConvo = 1
+        this.dialogLine = 0		  
         this.dialogSpeaker = null		
         this.dialogLastSpeaker = null	
         this.dialogTyping = false		
@@ -86,26 +86,6 @@ class Beach extends Phaser.Scene {
             this.dialogConvo++
         }
         
-        let line = this.dialog[this.dialogConvo][this.dialogLine]
-        console.log(line)
-
-        if(line.changeScene){
-        this.registry.set('dialogConvo', this.dialogConvo)
-        this.registry.set('dialogLine', this.dialogLine)
-        if(this.dialogLastSpeaker) {
-                this.tweens.add({
-                    targets: this[this.dialogLastSpeaker],
-                    x: this.offX,
-                    duration: this.tweenDuration,
-                    ease: 'Linear',
-                    onComplete: () => {
-                        this.diabox.visible = false
-                        this.scene.start('beachScene')
-                    }
-                })
-            }
-        return
-        }
 
         // make sure we haven't run out of conversations...
         if(this.dialogConvo >= this.dialog.length) {
@@ -122,7 +102,7 @@ class Beach extends Phaser.Scene {
                     ease: 'Linear',
                     onComplete: () => {
                         this.diabox.visible = false
-                        this.scene.start('beachScene')
+                        this.scene.start('pickerScene')
                     }
                 })
             }

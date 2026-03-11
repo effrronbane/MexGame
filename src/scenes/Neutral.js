@@ -10,15 +10,15 @@ class Neutral extends Phaser.Scene {
         this.box_font = 'May_font'
 
         //x and y for text to appear, size, and max char
-        this.textY = 420
-        this.textX = 25
+        this.textY = 200
+        this.textX = 400
         this.textSi = 23
         this.textMax = 715
 
         //where the next text will appear
         this.nextTE = '[Space]'
-        this.nextTE_X = 775
-        this.nextTE_Y = 574
+        this.nextTE_X = 700
+        this.nextTE_Y = 500
 
         //how fast words will be displayed
         this.timer = 13
@@ -40,17 +40,18 @@ class Neutral extends Phaser.Scene {
 
     create() {
 
-        //this.add.image(0,0,'') //add a back drop
+        //back drop
+        this.add.image(centerX,centerY,'post')
 
         //dialog
         this.dialog = this.cache.json.get('dialog')
 
         //char sprite
         this.Gustavo = this.add.sprite(this.offX, this.Ybox-100, 'Gustavo').setScale(.25)
-        this.Gustavo.speakerXOffset = 100
+        this.Gustavo.speakerXOffset = 225
 
         //box for dialog
-        this.diabox = this.add.sprite(this.Xbox, this.Ybox, 'box').setOrigin(0)
+        //this.diabox = this.add.sprite(this.Xbox, this.Ybox, 'box').setOrigin(0)
 
         //init dialog text objects
         this.diatext = this.add.bitmapText(this.textX, this.textY, this.box_font, '', this.textSi)
@@ -83,26 +84,6 @@ class Neutral extends Phaser.Scene {
             // ..but you could create logic to exit if each conversation was self-contained
             this.dialogConvo++
         }
-        
-        let line = this.dialog[this.dialogConvo][this.dialogLine]
-
-        if(line.changeScene){
-        this.registry.set('dialogConvo', this.dialogConvo)
-        this.registry.set('dialogLine', this.dialogLine)
-        if(this.dialogLastSpeaker) {
-                this.tweens.add({
-                    targets: this[this.dialogLastSpeaker],
-                    x: this.offX,
-                    duration: this.tweenDuration,
-                    ease: 'Linear',
-                    onComplete: () => {
-                        this.diabox.visible = false
-                        this.scene.start('beachScene')
-                    }
-                })
-            }
-        return
-        }
 
         // make sure we haven't run out of conversations...
         if(this.dialogConvo >= this.dialog.length) {
@@ -119,7 +100,7 @@ class Neutral extends Phaser.Scene {
                     ease: 'Linear',
                     onComplete: () => {
                         this.diabox.visible = false
-                        this.scene.start('beachScene')
+                        this.scene.start('pickerScene')
                     }
                 })
             }
