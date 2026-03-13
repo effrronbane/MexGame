@@ -77,20 +77,33 @@
         },
         {
             "speaker": "Gustavo",
-            "dialog": "Mas o menos, el lugar del que tengo mas recuerdos es nuestro puesto en el mercado.",
+            "dialog": "Mas o menos, el lugar del que tengo mas recuerdos es nuestro\npuesto en el mercado.",
             "newSpeaker": "true"
         },
         {
             "speaker": "Gustavo",
-            "dialog": "Siempre recuerdo estar sentado vendo a todos trabajar y querer ayudar, pero era demasiado pequeno para hacerlo."
+            "dialog": "Siempre recuerdo estar sentado vendo a todos trabajar y\nquerer ayudar, pero era demasiado pequeno para hacerlo."
         },
         {
             "speaker": "Gustavo",
-            "dialog": "Recuerdo ir andando a la pequena tienda que estaba justo al lado de nosotros para comprar un huevo kinder o chicles."
+            "dialog": "Recuerdo ir andando a la pequena tienda que estaba justo\nal lado de nosotros para comprar un huevo kinder o chicles."
         },
         {
             "speaker": "Gustavo",
-            "dialog": ""
+            "dialog": "Recuerdo el pequeno puesto que teniamos, donde\nvendiamos comida"
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "Escucharos hablar con todos los clientes que venían cada\nsemana, o ver que peliculas y juegos tenia esa persona"
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "Siento que no recuerdo gran cosa del tiempo que pasamos\nen nuestro puesto solo son pequenos fragmentos, pero aun asi me\ngusta pensar en ellos. "
+        }
+    ],
+    [
+        {
+            "changeScene": "pickerScene"
         }
     ]
 ]

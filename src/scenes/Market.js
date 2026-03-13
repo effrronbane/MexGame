@@ -39,7 +39,10 @@ class Market extends Phaser.Scene {
     }
 
     create() {        
-        this.vimar = true
+        vimar = true
+        console.log(vibeach)
+        console.log(vimar)
+        console.log(vimy)
 
         //background
         this.add.image(0,0,'marketST').setOrigin(0).setDisplaySize(width, height)
