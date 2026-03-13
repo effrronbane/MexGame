@@ -32,7 +32,7 @@ class Start extends Phaser.Scene {
     }
 
     update() {
-        this.scene.start('pickerScene')
+        this.scene.start('mymarketScene')
         if(Phaser.Input.Keyboard.JustDown(cursors.space)) {
             this.scene.start('neutralScene')
         }

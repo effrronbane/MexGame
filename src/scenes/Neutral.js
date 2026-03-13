@@ -85,6 +85,24 @@ class Neutral extends Phaser.Scene {
             this.dialogConvo++
         }
 
+        let line = this.dialog[this.dialogConvo][this.dialogLine]
+
+        if(line.changeScene){
+        if(this.dialogLastSpeaker) {
+            this.tweens.add({
+                    targets: this[this.dialogLastSpeaker],
+                    x: this.offX,
+                    duration: this.tweenDuration,
+                    ease: 'Linear',
+                    onComplete: () => {
+                        //this.diabox.visible = false
+                        this.scene.start('pickerScene')
+                    }
+                })
+            }
+        return
+        }
+
         // make sure we haven't run out of conversations...
         if(this.dialogConvo >= this.dialog.length) {
             // here I'm exiting the final conversation to return to the title...

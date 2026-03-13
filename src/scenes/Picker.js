@@ -4,6 +4,7 @@ class Picker extends Phaser.Scene {
     }
 
     create() {
+        this.cameras.main.setBackgroundColor('#D2B48C')
         const playa = this.add.bitmapText(centerX-185, centerY+64, 'May_font', 'La Playa', 45).setOrigin(.5)
         const mercado = this.add.bitmapText(centerX+200, centerY-58, 'May_font', 'El Mercado', 45).setOrigin(.5)
         const puesto = this.add.bitmapText(centerX-185, centerY-64, 'May_font', 'Nuestro Puesto', 45).setOrigin(.5)

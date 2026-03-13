@@ -17,20 +17,80 @@
             "speaker": "Gustavo",
             "dialog": "Y darte una imagen\nde lo que creo que es Mexico."
         }
+        
     ],
     [
         {
+            "changeScene": "pickerScene"
+        },
+        {
             "speaker": "Gustavo",
-            "dialog": "El primer lugar donde tengo muchos recuerdos es... la playa.",
+            "dialog": "Un lugar donde tengo muchos recuerdos es... la playa.",
             "newSpeaker": "true"
         },
         {
             "speaker": "Gustavo",
-            "dialog": "ojrojroijr"
+            "dialog": "Este es un lugar en el que siempre pienso en estar aqui.\nCada vez que voy a la playa, sonrio al recordar el tiempo que pasamos\nalli, viendo el banana boat o sentados sintiendo la arena en\nnuestros pies."
         },
         {
             "speaker": "Gustavo",
-            "dialog": "eoiejoiej"
+            "dialog": "Pasado tiempo con mis tios y tias, o mas recientemente,\ncuando fuimos a nadar."
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "No recuerdo mucho de nuestro tiempo en la playa.\nComo ustedes dicen, yo siempre corria hacia el agua y nunca\nqueria salir."
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "Pero aun la playa tiene un lugar especial en mi corazon por\nlos momentos que recuerdo "
+        }
+    ],
+    [
+        {
+            "changeScene": "pickerScene"
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "Un lugar que recuerdo mucho son los mercados.",
+            "newSpeaker": "true"
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "Como salir contigo a buscar lo que necesitamos para la\nsemana o para cuando necesitamos ir a vender comida"
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "Caminando por todos los puestos mirando lo que vendia\ncada uno. "
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "Hablar con todos los vendedores y simplemente disfrutar\npasando tiempo con mi mama"
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "Pero aparte de eso, no recuerdo las caras ni los nombres\nde las personas, no recuerdo ningun detalle de elos tiempos."
+        }
+    ],
+    [
+        {
+            "changeScene": "pickerScene"
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "Mas o menos, el lugar del que tengo mas recuerdos es nuestro puesto en el mercado.",
+            "newSpeaker": "true"
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "Siempre recuerdo estar sentado vendo a todos trabajar y querer ayudar, pero era demasiado pequeno para hacerlo."
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "Recuerdo ir andando a la pequena tienda que estaba justo al lado de nosotros para comprar un huevo kinder o chicles."
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": ""
         }
     ]
 ]
