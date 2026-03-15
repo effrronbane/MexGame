@@ -16,7 +16,7 @@ class Neutral extends Phaser.Scene {
         this.textMax = 715
 
         //where the next text will appear
-        this.nextTE = '[Space]'
+        this.nextTE = '[Espacio]'
         this.nextTE_X = 700
         this.nextTE_Y = 500
 
@@ -39,7 +39,6 @@ class Neutral extends Phaser.Scene {
     }
 
     create() {
-
         //back drop
         this.add.image(centerX,centerY,'post')
 
@@ -50,9 +49,6 @@ class Neutral extends Phaser.Scene {
         this.Gustavo = this.add.sprite(this.offX, this.Ybox-100, 'Gustavo').setScale(.25)
         this.Gustavo.speakerXOffset = 225
 
-        //box for dialog
-        //this.diabox = this.add.sprite(this.Xbox, this.Ybox, 'box').setOrigin(0)
-
         //init dialog text objects
         this.diatext = this.add.bitmapText(this.textX, this.textY, this.box_font, '', this.textSi)
         this.next = this.add.bitmapText(this.nextTE_X, this.nextTE_Y, this.box_font, '', this.textSi)
@@ -60,12 +56,11 @@ class Neutral extends Phaser.Scene {
         //input
         cursors = this.input.keyboard.createCursorKeys()
         
-        //starts the dialog
+        //starts the dialog fn
         this.typeText()  
     }
 
     update() {
-
         //checks input
         if(Phaser.Input.Keyboard.JustDown(cursors.space) && !this.dialogTyping) {
             this.typeText()
@@ -73,20 +68,19 @@ class Neutral extends Phaser.Scene {
     }
 
     typeText() {
+        //says its typing
         this.dialogTyping = true
-
         this.diatext.text = ''
         this.next.text = ''
-
+        
+        //increment count 
         if(this.dialogLine > this.dialog[this.dialogConvo].length - 1) {
             this.dialogLine = 0
-            // I increment the conversation count here...
-            // ..but you could create logic to exit if each conversation was self-contained
             this.dialogConvo++
         }
 
+        //make the line var to change when to change scene
         let line = this.dialog[this.dialogConvo][this.dialogLine]
-
         if(line.changeScene){
         if(this.dialogLastSpeaker) {
             this.tweens.add({
@@ -95,35 +89,13 @@ class Neutral extends Phaser.Scene {
                     duration: this.tweenDuration,
                     ease: 'Linear',
                     onComplete: () => {
-                        //this.diabox.visible = false
+                        //going to scene picker
                         this.scene.start('pickerScene')
                     }
                 })
             }
         return
         }
-
-        // make sure we haven't run out of conversations...
-        if(this.dialogConvo >= this.dialog.length) {
-            // here I'm exiting the final conversation to return to the title...
-            // ...but you could add alternate logic if needed
-            console.log('End of Conversations')
-            
-            // tween out prior speaker's image and return to title screen
-            if(this.dialogLastSpeaker) {
-                this.tweens.add({
-                    targets: this[this.dialogLastSpeaker],
-                    x: this.offX,
-                    duration: this.tweenDuration,
-                    ease: 'Linear',
-                    onComplete: () => {
-                        this.diabox.visible = false
-                        this.scene.start('pickerScene')
-                    }
-                })
-            }
-        } else {
-            // ...if we still have conversations left, set current speaker
             this.dialogSpeaker = this.dialog[this.dialogConvo][this.dialogLine]['speaker']
             
             // check if there's a new speaker (for exit/enter animations)
@@ -174,10 +146,9 @@ class Neutral extends Phaser.Scene {
                 callbackScope: this // keep Scene context
             })
             
-            // final cleanup before next iteration
-            this.diatext.maxWidth = this.TEXT_MAX_WIDTH  // set bounds on dialog
+            //cleanup
+            this.diatext.maxWidth = this.TEXT_MAX_WIDTH  //bounds
             this.dialogLine++                               // increment dialog line
             this.dialogLastSpeaker = this.dialogSpeaker     // set past speaker
-        }
     }
 }

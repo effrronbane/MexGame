@@ -16,7 +16,7 @@ class MyMarket extends Phaser.Scene {
         this.textMax = 715
 
         //where the next text will appear
-        this.nextTE = '[Space]'
+        this.nextTE = '[Espacio]'
         this.nextTE_X = 775
         this.nextTE_Y = 574
 
@@ -39,10 +39,8 @@ class MyMarket extends Phaser.Scene {
     }
 
     create() {
+        //marks you been here
         vimy = true
-        console.log(vibeach)
-        console.log(vimar)
-        console.log(vimy)
         
         //background
         this.add.image(0,0,'MYmarket').setOrigin(0).setDisplaySize(width, height)
@@ -69,7 +67,6 @@ class MyMarket extends Phaser.Scene {
     }
 
     update() {
-
         //checks input
         if(Phaser.Input.Keyboard.JustDown(cursors.space) && !this.dialogTyping) {
             this.typeText()
@@ -77,20 +74,19 @@ class MyMarket extends Phaser.Scene {
     }
 
     typeText() {
+        //says its typing
         this.dialogTyping = true
-
         this.diatext.text = ''
         this.next.text = ''
-
+        
+        //increment count 
         if(this.dialogLine > this.dialog[this.dialogConvo].length - 1) {
             this.dialogLine = 0
-            // I increment the conversation count here...
-            // ..but you could create logic to exit if each conversation was self-contained
             this.dialogConvo++
         }
-        
-        let line = this.dialog[this.dialogConvo][this.dialogLine]
 
+        //make the line var to change when to change scene
+        let line = this.dialog[this.dialogConvo][this.dialogLine]
         if(line.changeScene){
         if(this.dialogLastSpeaker) {
             this.tweens.add({
@@ -99,35 +95,13 @@ class MyMarket extends Phaser.Scene {
                     duration: this.tweenDuration,
                     ease: 'Linear',
                     onComplete: () => {
-                        //this.diabox.visible = false
+                        //going to scene picker
                         this.scene.start('pickerScene')
                     }
                 })
             }
         return
         }
-
-        // make sure we haven't run out of conversations...
-        if(this.dialogConvo >= this.dialog.length) {
-            // here I'm exiting the final conversation to return to the title...
-            // ...but you could add alternate logic if needed
-            console.log('End of Conversations')
-            
-            // tween out prior speaker's image and return to title screen
-            if(this.dialogLastSpeaker) {
-                this.tweens.add({
-                    targets: this[this.dialogLastSpeaker],
-                    x: this.offX,
-                    duration: this.tweenDuration,
-                    ease: 'Linear',
-                    onComplete: () => {
-                        this.diabox.visible = false
-                        this.scene.start('pickerScene')
-                    }
-                })
-            }
-        } else {
-            // ...if we still have conversations left, set current speaker
             this.dialogSpeaker = this.dialog[this.dialogConvo][this.dialogLine]['speaker']
             
             // check if there's a new speaker (for exit/enter animations)
@@ -178,10 +152,9 @@ class MyMarket extends Phaser.Scene {
                 callbackScope: this // keep Scene context
             })
             
-            // final cleanup before next iteration
-            this.diatext.maxWidth = this.TEXT_MAX_WIDTH  // set bounds on dialog
+            //cleanup
+            this.diatext.maxWidth = this.TEXT_MAX_WIDTH  //bounds
             this.dialogLine++                               // increment dialog line
             this.dialogLastSpeaker = this.dialogSpeaker     // set past speaker
-        }
     }
 }

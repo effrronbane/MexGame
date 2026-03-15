@@ -30,7 +30,7 @@
         },
         {
             "speaker": "Gustavo",
-            "dialog": "Este es un lugar en el que siempre pienso en estar aqui.\nCada vez que voy a la playa, sonrio al recordar el tiempo que pasamos\nalli, viendo el banana boat o sentados sintiendo la arena en\nnuestros pies."
+            "dialog": "Este es un lugar en el que siempre pienso en estar aqui.\nCada vez que voy a la playa, sonrio al recordar el tiempo que pasamos\nalli, viendo el barco de banana o sentados sintiendo la arena en\nnuestros pies."
         },
         {
             "speaker": "Gustavo",
@@ -99,6 +99,44 @@
         {
             "speaker": "Gustavo",
             "dialog": "Siento que no recuerdo gran cosa del tiempo que pasamos\nen nuestro puesto solo son pequenos fragmentos, pero aun asi me\ngusta pensar en ellos. "
+        }
+    ],
+    [
+        {
+            "changeScene": "pickerScene"
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "Y bueno, eso es todo,\nlo que queria decir en poco\ntiempo.",
+            "newSpeaker": "true"
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "Y, obviamente, eso\nno es todo todo lo que recuerdo\nde Mexico."
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "Solo quería daros\nuna pequena idea de lo que\nrecuerdo de alli."
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "Aun si no tenga\ntantos recuerdos."
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "Y tengo recuerdos\nque no son mios, es una casa\nque nunca conoci."
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "Sigue siendo mi\ncasa, al que amo y aprecio."
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "Se que nunca te lo\ndigo, pero te quiero mucho ma."
+        },
+        {
+            "speaker": "Gustavo",
+            "dialog": "Y siempre te querre,\naunque no te lo diga."
         }
     ],
     [

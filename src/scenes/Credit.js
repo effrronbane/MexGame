@@ -17,7 +17,6 @@ class Credit extends Phaser.Scene {
         
         //controls
         cr = this.input.keyboard.addKey('C')
-
     }
 
     update() {

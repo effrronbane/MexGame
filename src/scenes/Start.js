@@ -25,19 +25,22 @@ class Start extends Phaser.Scene {
     }
 
     create() {
+        //back drop
         this.add.image(centerX,centerY,'post')
+
+        //text on the screen
         this.add.bitmapText(centerX-185, centerY, 'May_font', 'Acapulco', 60).setOrigin(.5)
         this.add.bitmapText(centerX+150, centerY-32, 'May_font', 'Recuerdos de Mexico', 34).setOrigin(0.5)
         this.add.bitmapText(centerX+150, centerY+75, 'May_font', 'Pulsa C para los creditos', 24).setOrigin(0.5)
-        this.clstart = this.add.bitmapText(centerX+150, centerY + 24, 'May_font', 'Espacio Para Empezar', 30).setOrigin(0.5)
+        this.add.bitmapText(centerX+150, centerY + 24, 'May_font', 'Espacio Para Empezar', 30).setOrigin(0.5)
+        
+        //controls to go to next scene or credits
         cursors = this.input.keyboard.createCursorKeys()
         cr = this.input.keyboard.addKey('C')
-        console.log(vibeach)
-        console.log(vimar)
-        console.log(vimy)
     }
 
     update() {
+        //checking for inputs
         if(Phaser.Input.Keyboard.JustDown(cursors.space)) {
             this.scene.start('neutralScene')
         }
