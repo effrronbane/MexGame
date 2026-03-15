@@ -28,6 +28,11 @@ class Start extends Phaser.Scene {
         //back drop
         this.add.image(centerX,centerY,'post')
 
+        //if you restart the var don't carry over
+        vibeach = false
+        vimar = false
+        vimy = false
+        
         //text on the screen
         this.add.bitmapText(centerX-185, centerY, 'May_font', 'Acapulco', 60).setOrigin(.5)
         this.add.bitmapText(centerX+150, centerY-32, 'May_font', 'Recuerdos de Mexico', 34).setOrigin(0.5)

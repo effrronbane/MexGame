@@ -7,6 +7,9 @@ class Picker extends Phaser.Scene {
         //back drop
         this.add.image(centerX,centerY, 'border')
 
+        //text to be able to restart
+        this.add.bitmapText(centerX-230, centerY-215, 'May_font', 'Pulsa R para reiniciar', 20).setOrigin(.5)
+
         //text to select scene
         const playa = this.add.bitmapText(centerX-185, centerY+64, 'May_font', 'La Playa', 45).setOrigin(.5)
         const mercado = this.add.bitmapText(centerX+200, centerY-58, 'May_font', 'El Mercado', 45).setOrigin(.5)
@@ -17,9 +20,9 @@ class Picker extends Phaser.Scene {
             const los = this.add.bitmapText(centerX+200, centerY+64, 'May_font', 'Los Quiero', 45).setOrigin(.5)
             los.setInteractive()
             los.on('pointerdown', () => {
-                this.cameras.main.fade(1000,0,0,0)
+                this.cameras.main.fade(1000,0,0,0) //fade out
                 this.cameras.main.once('camerafadeoutcomplete', () => {
-                    this.scene.start('losScene')
+                    this.scene.start('losScene') // start scene when the fade is done
                 })
             })
         }
@@ -39,5 +42,13 @@ class Picker extends Phaser.Scene {
         puesto.on('pointerdown', () => {
             this.scene.start("mymarketScene")
         })
+
+        re = this.input.keyboard.addKey('R')
+    }
+
+    update() {
+        if(Phaser.Input.Keyboard.JustDown(re)) {
+            this.scene.start('startScene')
+        }
     }
 }

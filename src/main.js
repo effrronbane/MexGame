@@ -1,7 +1,7 @@
-//Gustavo
-//Game title:Recuerdos de Mexico
+//Name: Gustavo
+//Game title: Recuerdos de Mexico
 //Hours: 19
-//Components: tween manager, text objects, bitmap font, dialog json, and interactive text
+//Components: tween manager, text objects, bitmap font, fade in and out, and interactive text
 
 let config = {
     type: Phaser.AUTO,
@@ -21,8 +21,9 @@ const centerY = game.config.height / 2
 //controls
 let cursors = null
 let cr = null
+let re = null
 
 //var to track when you been to a scene
-let vibeach = true
-let vimar = true
-let vimy = true
+let vibeach = false
+let vimar = false
+let vimy = false
