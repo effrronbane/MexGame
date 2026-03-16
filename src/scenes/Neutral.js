@@ -126,6 +126,12 @@ class Neutral extends Phaser.Scene {
 
             // create a timer to iterate through each letter in the dialog text
             let currentChar = 0
+
+            //typing sound
+            let type = this.sound.add('type')
+            type.play()
+            type.setVolume(.0125)
+            
             this.textTimer = this.time.addEvent({
                 delay: this.timer,
                 repeat: this.combinedDialog.length - 1,
@@ -137,6 +143,8 @@ class Neutral extends Phaser.Scene {
                     // check if timer has exhausted its repeats 
                     // (necessary since Phaser 3 no longer seems to have an onComplete event)
                     if(this.textTimer.getRepeatCount() == 0) {
+                        //stops typing sound
+                        type.stop()
                         // show prompt for more text
                         this.next = this.add.bitmapText(this.nextTE_X, this.nextTE_Y, this.box_font, this.nextTE, this.textSi).setOrigin(1)
                         this.dialogTyping = false   // un-lock input
@@ -145,7 +153,6 @@ class Neutral extends Phaser.Scene {
                 },
                 callbackScope: this // keep Scene context
             })
-            
             //cleanup
             this.diatext.maxWidth = this.TEXT_MAX_WIDTH  //bounds
             this.dialogLine++                               // increment dialog line

@@ -4,6 +4,17 @@ class Picker extends Phaser.Scene {
     }
 
     create() {
+        //stops sound from other scenes
+        if(vibeach){
+            this.sound.get('waves').stop()
+        }
+        if(vimar){
+            this.sound.get('street').stop()
+        }
+        if(vimy){
+            this.sound.get('market').stop()
+        }
+
         //back drop
         this.add.image(centerX,centerY, 'border')
 

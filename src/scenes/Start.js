@@ -20,11 +20,25 @@ class Start extends Phaser.Scene {
         this.load.image('post', 'img/postcard.png')
         this.load.image('border', 'img/bor_post.png')
 
+        //sfx
+        this.load.audio('street', 'sfx/market_street.mp3')
+        this.load.audio('market', 'sfx/marketbackground.mp3')
+        this.load.audio('waves', 'sfx/shore_waves.mp3')
+        this.load.audio('type', 'sfx/typing.mp3')
+        this.load.audio('KRrevice', 'sfx/KamenRider_Revice.mp3')
+
         //font
         this.load.bitmapFont('May_font', 'font/Mayan.png', 'font/Mayan.xml')
     }
 
     create() {
+        //music
+        let mu = this.sound.add('KRrevice')
+        if(this.sound.getAllPlaying().length === 0){
+            mu.play({loop:true})
+            mu.setVolume(.0125)    
+        }
+        
         //back drop
         this.add.image(centerX,centerY,'post')
 
@@ -32,7 +46,7 @@ class Start extends Phaser.Scene {
         vibeach = false
         vimar = false
         vimy = false
-        
+
         //text on the screen
         this.add.bitmapText(centerX-185, centerY, 'May_font', 'Acapulco', 60).setOrigin(.5)
         this.add.bitmapText(centerX+150, centerY-32, 'May_font', 'Recuerdos de Mexico', 34).setOrigin(0.5)
